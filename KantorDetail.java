@@ -1,13 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pbo1;
 
-/**
- *
- * @author lenovo
- */
-public class KantorDetail {
-    
+public class KantorDetail extends Kantor {
+    private final String[] divisi;
+
+    public KantorDetail(String nama, String lokasi, int jumlahKaryawan, String[] divisi) {
+        super(nama, lokasi, jumlahKaryawan);
+        this.divisi = divisi;
+    }
+
+        // Override method
+        @Override
+    public void tampilkanInfo() {
+        super.tampilkanInfo();
+        System.out.println("Daftar Divisi:");
+        for (String d : divisi) {
+            System.out.println("- " + d);
+        }
+    }
+
+    public String[] getDivisi() {
+        return divisi;
+    }
 }
